@@ -650,7 +650,7 @@ body, html {
     display: block;
     font-family: 'Montserrat', sans-serif;
     color: #2c2c2c;
-    font-size: 0.55rem;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 2px;
@@ -660,7 +660,7 @@ body, html {
     display: block;
     font-family: 'Cormorant Garamond', serif;
     color: #8c6d33;
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     letter-spacing: 2px;
 }
 
@@ -730,4 +730,54 @@ body, html {
     min-height: 100%;
     font-family: 'Reem Kufi', sans-serif;
     overflow-x: hidden;
+}
+.falling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999; /* عشان يكون فوق كل العناصر ويظهر بوضوح */
+}
+/* حاوية الورد أو القلوب اللي بتغطي الشاشة كلها */
+.falling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* عشان ما تعطلش الضغط على أي زرار في الصفحة */
+    z-index: 9999; /* عشان تظهر فوق كل حاجة */
+}
+
+/* شكل كل قلب أو وردة وحركة النزول بتاعتها */
+.flower-item {
+    position: absolute;
+    top: -50px; /* تبدأ من فوق الشاشة من بره خالص */
+    font-size: 22px;
+    animation: fallAnimation linear infinite;
+    opacity: 0.8;
+}
+
+/* توزيع الأماكن والسرعات المختلفة عشان تبقي طبيعية ومش ماشية مع بعضها */
+.flower-item:nth-child(1) { left: 15%; animation-duration: 6s; animation-delay: 0s; }
+.flower-item:nth-child(2) { left: 45%; animation-duration: 8s; animation-delay: 2s; }
+.flower-item:nth-child(3) { left: 75%; animation-duration: 7s; animation-delay: 1s; }
+
+/* أنيميشن السقوط من أعلى لأسفل */
+@keyframes fallAnimation {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg); /* تنزل لحد تحت الشاشة خالص */
+        opacity: 0.2;
+    }
 }
