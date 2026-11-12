@@ -341,6 +341,7 @@ body, html {
     align-items: center;
     gap: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
 }
 
 .luxury-map-btn:hover {
@@ -668,4 +669,58 @@ body, html {
 .luxury-second-page, .luxury-second-page * {
     font-family: 'Amiri', serif !important;
     letter-spacing: 0.5px; /* بيعطي وسع ونعومة للحروف العربية ويمنع التداخل */
+}
+
+.monogram-img-container {
+    position: relative;
+    right: -70px; /* بالسالب بتتحرك يمين، بالموجب شمال */
+}
+.story-page.footer-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* المسافة بين الصورة والكلام */
+}
+
+.footer-monogram {
+    width: 300px; /* تقدري تتحكمي في حجم اللوجو حسب ما تحبي */
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.footer-text {
+    font-family: 'Cairo', sans-serif; /* أو الخط المفضل عندك للنصوص */
+    font-size: 16px;
+    color: #4a4a4a;
+    max-width: 300px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.story-page.footer-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* بيخلي العناصر في نص الصفحة عمودياً من غير ما تتفرود غصب */
+    align-items: center;
+    height: auto; /* عشان مياخدش طول زيادة عن اللزوم */
+    min-height: auto;
+}
+
+.footer-content {
+    display: inline-flex; /* بيخلي البلوك ياخد على قد محتواه بالظبط */
+    flex-direction: column;
+    align-items: center;
+    width: fit-content; /* حجم البلوك يبقى على قد الكلام والصورة */
+    margin: 0 auto;
+    padding: 20px;
 }
