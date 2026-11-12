@@ -781,26 +781,4 @@ body, html {
         opacity: 0.2;
     }
 }
-/* منع الـ Scroll نهائياً من الصفحة الرئيسية وطول ما الظرف قافل */
-body {
-    overflow: hidden; /* بيمنع السكرول من بره تماماً */
-    height: 100vh;
-    margin: 0;
-}
 
-/* شاشة الظرف تغطي الشاشة كلها تماماً وتكون ثابتة فوق كل حاجة */
-.envelope-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0f172a; /* لون الخلفية بتاعتك */
-    z-index: 99999; /* عشان تبقي فوق أي حاجة تانية */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* منع أي محتوى يطلع بره الشاشة */
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-}
