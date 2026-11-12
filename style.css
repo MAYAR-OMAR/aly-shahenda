@@ -724,3 +724,10 @@ body, html {
     margin: 0 auto;
     padding: 20px;
 }
+body, html {
+    width: 100%;
+    height: auto; /* عشان الصفحة تاخد طولها الطبيعي والمحتوى ينزل براحته */
+    min-height: 100%;
+    font-family: 'Reem Kufi', sans-serif;
+    overflow-x: hidden;
+}

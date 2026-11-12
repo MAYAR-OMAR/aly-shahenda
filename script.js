@@ -1,4 +1,4 @@
-// Set the date we're counting down to: October 29, 2026, 18:00:00 (6 PM)
+// Set the date we're counting down to: November 26, 2026, 18:00:00 (6 PM)
 const weddingDate = new Date("November 26, 2026 18:00:00").getTime();
 
 const countdownInterval = setInterval(function() {
@@ -20,26 +20,78 @@ const countdownInterval = setInterval(function() {
     document.getElementById("hours").innerText = String(hours).padStart(2, '0');
     document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
     document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-}, 1000);function openInvitation() {
+}, 1000);
+
+// --- الأوتو سكرول المحدث والجاهز لكل أنواع الصفحات ---
+let isAutoScrolling = false;
+
+function startSmoothAutoScroll() {
+    isAutoScrolling = true;
+    const scrollSpeed = 0.5; // سرعة النزول (قلليها لـ 0.5 لو عايزاه أبطأ)
+
+    function step() {
+        if (!isAutoScrolling) return;
+
+        // النزول تدريجياً
+        window.scrollBy(0, scrollSpeed);
+
+        // حساب أقصى مسافة ممكن النزول إليها بناءً على محتوى الصفحة بالكامل
+        const scrollHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.clientHeight, document.documentElement.clientHeight
+        );
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const maxScroll = scrollHeight - window.innerHeight;
+
+        // لو وصلنا لنهاية الصفحة أو مش هينفع ينزل تاني بنوقف
+        if (currentScroll >= maxScroll - 2) {
+            isAutoScrolling = false;
+            return;
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
+// إيقاف النزول فوراً لو الضيف لمس الشاشة أو حرك الماوس
+['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(event => {
+    window.addEventListener(event, () => {
+        isAutoScrolling = false;
+    }, { passive: true });
+});
+
+function openInvitation() {
     const overlay = document.getElementById('envelopeOverlay');
     const video = document.getElementById('envelopeVideo');
     const song = document.getElementById('weddingSong');
     
-    // إخفاء الزرار فور الضغط عليه
-    document.querySelector('.envelope-center-prompt').style.display = 'none';
+    // إخفاء زرار الفتح
+    const promptBtn = document.querySelector('.envelope-center-prompt');
+    if (promptBtn) promptBtn.style.display = 'none';
     
-    // 1. تشغيل الأغنية الخلفية فوراً (مسموحة لأنها جاءت بعد تفاعل المستخدم مباشرة)
-    song.play().catch(error => {
-        console.log("Audio play error:", error);
-    });
+    // تشغيل الأغنية والفيديو
+    if (song) {
+        song.play().catch(error => console.log("Audio play error:", error));
+    }
     
-    // 2. تشغيل فيديو الزرف
-    video.play().catch(error => {
-        console.log("Video play error:", error);
-    });
-    
-    // 3. أول ما فيديو الزرف يخلص، يختفي الغلاف وتظهر الدعوة وتظل الأغنية شغالـة
-    video.onended = function() {
-        overlay.classList.add('hide-envelope');
-    };
+    if (video) {
+        video.play().catch(error => console.log("Video play error:", error));
+        
+        video.onended = function() {
+            if (overlay) overlay.classList.add('hide-envelope');
+            
+            // يبدأ الأوتو سكرول بعد اختفاء الغلاف بثانية واحدة
+            setTimeout(() => {
+                startSmoothAutoScroll();
+            }, 1000);
+        };
+    } else {
+        if (overlay) overlay.classList.add('hide-envelope');
+        setTimeout(() => {
+            startSmoothAutoScroll();
+        }, 1000);
+    }
 }
