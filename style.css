@@ -1,0 +1,671 @@
+/* استيراد خط رقعة أنيق وراقي للدعوات من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Reem Kufi', sans-serif;
+    overflow-x: hidden;
+}
+
+/* خلفية الموقع العامة */
+.website-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -10;
+}
+
+/* شاشة الواجهة الأولى */
+.hero-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    overflow: hidden;
+}
+
+/* صورة الواجهة بتعمل Cover */
+.hero-cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* طبقة شفافة خفيفة فوق الصورة */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15); 
+    z-index: 2;
+}
+
+/* حاوية العناصر في المنتصف بشكل ثابت ومنسق */
+.typewriter-container {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    margin-left: -50px;
+}
+
+/* تنسيق حاوية صورة البسملة */
+.bismillah-img-container {
+    width: 100%;
+    text-align: center;
+}
+
+.bismillah-img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* تنسيق الآيات القرآنية ثابتة وبدون أي حدود أو حركة */
+.quran-ayah {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #2c2c2c;
+    direction: rtl;
+    text-align: center;
+    line-height: 2.2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quran-ayah p {
+    margin: 0;
+}
+
+/* تجاوب الشاشات الصغيرة (الموبايل) */
+@media (max-width: 768px) {
+    .hero-screen {
+        padding-top: 40px;
+    }
+    .bismillah-img {
+        max-width: 160px;
+    }
+    .quran-ayah {
+        font-size: 1.25rem;
+    }
+}
+/* خلفية الموقع العامة */
+.website-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./bag.png); /* حطي هنا اسم صورة الخلفية بتاعتك */
+    background-size: cover;
+    background-position: center;
+    z-index: -10;
+}
+/* تنسيق صورة الحروف المدمجة (Monogram) */
+.monogram-img-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 100px;
+}
+
+.monogram-img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* تنسيق نصوص الـ English الأنيقة */
+.wedding-details-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: -120px;
+}
+
+.family-text {
+    font-size: 0.80rem;
+    letter-spacing: 2px;
+    color: #555555;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.couple-names {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin: 2px 0;
+}
+
+.invite-text {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #666666;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.quran-ayah {
+    margin-right: 60px;
+}
+
+/* page 2 *//* تنسيق الصفحة الثانية */
+/* تنسيق الصفحة الثانية بالكامل لتكون متناسقة وفخمة */
+/* تنسيق الـ section الأساسي بنفس خلفية الصفحة الأولى */
+
+
+
+
+/* ================================================= */
+/* تنسيقات قسم Save The Date (الصفحة الثانية) */
+/* ================================================= */
+/* ================================================= */
+/* تنسيقات القسم الثاني المحدثة (بدون حدود، مفرود، وراقي) */
+/* ================================================= */
+/* ================================================= */
+/* تصميم إبداعي راقي وفخم - Save The Date Section */
+/* ================================================= */
+
+.luxury-second-page {
+    margin: 50px auto;
+    max-width: 520px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 246, 240, 0.95) 100%);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 50px 30px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+/* خط فخم فوق الكارد */
+.luxury-second-page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c5a059, transparent);
+    border-radius: 0 0 4px 4px;
+}
+
+.save-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #2c2c2c;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.date-badge {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #8c6d33;
+    background: rgba(197, 160, 89, 0.08);
+    padding: 6px 18px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-weight: 500;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+/* Countdown: جنب بعضه في دوائر فخمة وبشكل إبداعي */
+.countdown-circle-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.circle-box {
+    background: #ffffff;
+    border: 1px solid #e6dec8;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease;
+}
+
+.circle-box:hover {
+    transform: translateY(-4px);
+    border-color: #c5a059;
+}
+
+.circle-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    line-height: 1;
+}
+
+.circle-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #888888;
+    letter-spacing: 1px;
+    margin-top: 3px;
+}
+
+.circle-separator {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: #c5a059;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+/* Venue Section (At Resort Hotel) */
+.venue-section {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(230, 222, 200, 0.6);
+    position: relative;
+}
+
+.venue-icon {
+    font-size: 1.3rem;
+    color: #c5a059;
+    margin-bottom: 8px;
+}
+
+.venue-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+.venue-section p {
+    font-size: 0.9rem;
+    color: #666666;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.luxury-map-btn {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.luxury-map-btn:hover {
+    background: linear-gradient(135deg, #c5a059 0%, #b08d44 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Unplugged Ceremony Notice */
+.unplugged-section {
+    border-top: 1px solid rgba(210, 200, 185, 0.5);
+    padding-top: 25px;
+}
+
+.camera-icon-glow {
+    font-size: 1.4rem;
+    color: #c5a059;
+    margin-bottom: 8px;
+}
+
+.unplugged-section h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+    font-weight: 600;
+}
+
+.unplugged-section p {
+    font-size: 0.8rem;
+    color: #777777;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* ================================================= */
+/* تنسيقات الصفحة الثالثة: Our Story والخرائط والفيديو */
+/* ================================================= */
+/* ================================================= */
+/* تنسيقات الصفحة الثالثة: Our Story والخرائط والفيديو */
+/* ================================================= */
+
+.story-page {
+    margin: 40px auto;
+    max-width: 520px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 246, 240, 0.95) 100%);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 45px 30px 20px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-header {
+    margin-bottom: 25px;
+}
+
+.story-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8c6d33;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.story-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #2c2c2c;
+    text-transform: uppercase;
+}
+
+/* بطاقة خريطة المسار المطابقة للصورة */
+.story-map-card-exact {
+    background: #faf8f5;
+    border: 1px solid #eee6d8;
+    border-radius: 20px;
+    padding: 25px 15px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-visual-container {
+    position: relative;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10px;
+}
+
+.pin-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.egypt-pin {
+    align-self: flex-end;
+}
+
+.jordan-pin {
+    align-self: flex-start;
+}
+
+.map-pin-icon {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 2px 4px rgba(217, 83, 79, 0.3));
+    margin-bottom: 2px;
+}
+
+.country-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+}
+
+.person-role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    color: #888888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 2px;
+}
+
+.path-curve-box {
+    position: absolute;
+    width: 75%;
+    left: 12.5%;
+    top: 20px;
+    text-align: center;
+}
+
+.curved-dashed-line {
+    width: 100%;
+    height: 35px;
+    border-bottom: 2px dashed #c5a059;
+    border-radius: 50%;
+    margin-bottom: -15px;
+    opacity: 0.6;
+}
+
+.riyadh-center-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.heart-icon-glow {
+    font-size: 1.2rem;
+    margin-bottom: -2px;
+    filter: drop-shadow(0 3px 6px rgba(217, 83, 79, 0.25));
+}
+
+.riyadh-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    letter-spacing: 3px;
+    margin: 2px 0;
+}
+
+.riyadh-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #777777;
+    letter-spacing: 0.5px;
+}
+
+/* النصوص الوصفية */
+.story-text-content {
+    margin-bottom: 25px;
+}
+
+.main-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.sub-quote {
+    font-size: 0.85rem;
+    color: #777777;
+    line-height: 1.5;
+}
+
+/* صندوق الفيديو الحقيقي */
+.video-container-box {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e6dec8;
+    background: #000;
+}
+
+.story-real-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* الفراشات في نهاية الصفحة الثالثة */
+.footer-butterflies {
+    width: 100%;
+    margin-top: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+}
+
+.butterflies-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+}
+
+
+
+
+
+
+/* شاشة الـ Envelope والملء الكامل للشاشة بدون سواد */
+.envelope-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    overflow: hidden;
+}
+
+.envelope-overlay.hide-envelope {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* الفيديو يملى الموبايل واللابتوب بالكامل بدون أي مساحات سوداء */
+.envelope-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* الزرار الأبيض الفخم في المنتصف */
+.envelope-center-prompt {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(197, 160, 89, 0.5);
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.envelope-center-prompt:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+.tap-main-text {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c2c2c;
+    font-size: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+.tap-sub-text {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    color: #8c6d33;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+.luxury-second-page, .luxury-second-page * {
+    font-family: 'Amiri', serif !important;
+    letter-spacing: 0.5px; /* بيعطي وسع ونعومة للحروف العربية ويمنع التداخل */
+}

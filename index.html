@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>Ahmed & Eman | 31/10/2026</title>
+<meta name="description" content="You are invited to the wedding of Ahmed & Eman — 31/10/2026" />
+
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eman-ahmed.vercel.app/" />
+<meta property="og:title" content="Ahmed & Eman" />
+<meta property="og:description" content="You are invited to our wedding — 31/10/2026" />
+<meta property="og:image" content="https://eman-ahmed.vercel.app/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Ahmed & Eman — 31.10.2026" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ahmed & Eman" />
+<meta name="twitter:description" content="You are invited to our wedding — 31/10/2026" />
+<meta name="twitter:image" content="https://eman-ahmed.vercel.app/og-image.jpg" />
+</head>
+<body>
+<!-- شاشة الـ Envelope والـ Video والزرار الأبيض -->
+<div id="envelopeOverlay" class="envelope-overlay">
+    <!-- فيديو الزرف (صامت muted عشان يشتغل فوري بدون مشاكل على الموبايل) -->
+    <video id="envelopeVideo" class="envelope-video" poster="./poster2.jfif" playsinline webkit-playsinline muted>
+        <source src="./openingvideo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- الزرار الأبيض في منتصف الشاشة -->
+    <div class="envelope-center-prompt" onclick="openInvitation()">
+        <span class="tap-main-text">CLICK TO OPEN</span>
+        <span class="tap-sub-text">INVITATION</span>
+    </div>
+</div>
+
+<!-- ملف الأغنية المنفصل اللي هيفضل شغال في الخلفية -->
+<audio id="weddingSong" >
+    <source src="./WhatsApp Video 2026-09-23 at 6.20.06 PM (1).mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+
+
+<!--hna b2a baqy mo7tawa al-invitation bta3tk (Save the date, Our story, etc.) -->
+    <!-- 1. خلفية الموقع العامة -->
+    <div class="website-background"></div>
+
+    <!-- الصفحة الأولى (Hero Section) -->
+    <section class="hero-screen">
+        
+        <!-- 2. صورة الصفحة الأولى -->
+        <img src="./firstpage.jfif" alt="First Page Image" class="hero-cover-image">
+
+        <!-- طبقة شفافة فوق الصورة الأولى -->
+        <div class="overlay"></div>
+
+        <!-- حاوية الكلام الثابتة فوق الصفحة الأولى -->
+        <div class="typewriter-container">
+            <!-- صورة البسملة -->
+            <div class="bismillah-img-container">
+                <img src="./bismallah.png" alt="بسم الله الرحمن الرحيم" class="bismillah-img">
+            </div>
+            
+            <!-- الآيات ثابتة ومرتبة بدون typewriter -->
+            <div class="quran-ayah">
+                <p>وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ أَزْوَاجًا</p>
+                <p>لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+            </div>
+            <!-- Souret el-Horof (Monogram) -->
+            <div class="monogram-img-container">
+                <img src="./dmg2.png" alt="A & E Initials" class="monogram-img"> <!-- 8yry esm el-sora 7sb el-molf 3ndk -->
+            </div>
+
+          
+            <div class="quran-ayah" style="margin-top: 10px;">
+                <p>اللهم اجعله عقداً سعيداً مباركاً</p>
+                <p>محفوفاً بالمودّة والرحمة</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<div class="invitation-container luxury-second-page">
+    <!-- Title -->
+    <h1 class="save-title">احفظ هذا اليوم</h1>
+    <div class="date-badge">الخميس • ٢٦.١١.٢٠٢٦ • ٦:٠٠ مساءً</div>
+
+    <!-- Countdown Timer (جنب بعضه في دوائر فخمة) -->
+    <div class="countdown-circle-grid" id="countdown">
+        <div class="circle-box">
+            <span class="circle-number" id="days">٠٠</span>
+            <span class="circle-label">يوم</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="hours">٠٠</span>
+            <span class="circle-label">ساعة</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="minutes">٠٠</span>
+            <span class="circle-label">دقيقة</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="seconds">٠٠</span>
+            <span class="circle-label">ثانية</span>
+        </div>
+    </div>
+
+    <!-- Resort Hotel & Location Button -->
+    <div class="venue-section">
+        <div class="venue-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <h3>قاعة جولدن نايت - الزقازيق</h3>
+        <p>أول طريق منيا القمح، نزلة كوبري شرويدة • الخميس، ٢٦ / ١١ / ٢٠٢٦ في تمام الساعة ٦:٠٠ مساءً</p>
+        <a href="https://maps.app.goo.gl/ucQLbCYtMmMEpKvB7?g_st=iwb" target="_blank" class="luxury-map-btn">
+            <span>عرض الموقع</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Unplugged Ceremony Notice -->
+    <div class="unplugged-section">
+        <div class="camera-icon-glow">
+            <i class="fa-solid fa-camera-slash"></i>
+        </div>
+        <h4>حفل زفاف بدون تصوير</h4>
+        <p>نرجو التكرم بعدم التقاط الصور أو مقاطع الفيديو خلال مراسم الحفل، لنعيش هذه اللحظة المميزة معاً بكل تركيز واهتمام.</p>
+    </div>
+</div>
+
+
+
+
+
+<!-- القسم الثالث: Our Story (Where We Met) -->
+<div class="invitation-container story-page">
+    <!-- العنوان -->
+    <div class="story-header">
+        <span class="story-subtitle">Our Story</span>
+        <h2 class="story-title">Where We Met</h2>
+    </div>
+
+    <!-- تفاصيل القصة والمسار (مطابق تماماً للصورة) -->
+    <div class="story-map-card-exact">
+        <div class="map-visual-container">
+            <!-- دبوس مصر (الشمال تحت) -->
+            <div class="pin-point egypt-pin">
+                <div class="map-pin-icon">📍</div>
+                <span class="country-name">EGYPT</span>
+                <span class="person-role">GROOM</span>
+            </div>
+
+            <!-- الخط المنحني والقلب في المنتصف (الرياض) -->
+            <div class="path-curve-box">
+                <div class="curved-dashed-line"></div>
+                <div class="riyadh-center-badge">
+                    <div class="heart-icon-glow">❤️</div>
+                    <h3 class="riyadh-word">RIYADH</h3>
+                    <p class="riyadh-sub">Where Our Hearts Met</p>
+                </div>
+            </div>
+
+            <!-- دبوس الأردن (اليمين فوق) -->
+            <div class="pin-point jordan-pin">
+                <div class="map-pin-icon">📍</div>
+                <span class="country-name">JORDAN</span>
+                <span class="person-role">BRIDE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- النصوص الوصفية -->
+    <div class="story-text-content">
+        <p class="main-quote">"Two different paths, one beautiful destination."</p>
+        <p class="sub-quote">From Egypt & Jordan to Riyadh, where our story officially began.</p>
+    </div>
+
+    <!-- مشغل الفيديو الحقيقي -->
+    <div class="video-container-box">
+        <video class="story-real-video" autoplay muted playsinline controls poster="">
+    <source src="map.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+    </div>
+
+   
+
+
+    <!-- مش محتاجين ملف script.js لو كان مخصص للـ typewriter بس -->
+    <script src="script.js"></script>
+</body>
+</html>
