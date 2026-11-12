@@ -22,20 +22,18 @@ const countdownInterval = setInterval(function() {
     document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
 }, 1000);
 
-// --- الأوتو سكرول المحدث والجاهز لكل أنواع الصفحات ---
+// --- الأوتو سكرول الثابت والناعم ---
 let isAutoScrolling = false;
 
 function startSmoothAutoScroll() {
     isAutoScrolling = true;
-    const scrollSpeed = 0.5; // سرعة النزول (قلليها لـ 0.5 لو عايزاه أبطأ)
+    const scrollSpeed = 0.5; // سرعة النزول
 
     function step() {
         if (!isAutoScrolling) return;
 
-        // النزول تدريجياً
         window.scrollBy(0, scrollSpeed);
 
-        // حساب أقصى مسافة ممكن النزول إليها بناءً على محتوى الصفحة بالكامل
         const scrollHeight = Math.max(
             document.body.scrollHeight, document.documentElement.scrollHeight,
             document.body.offsetHeight, document.documentElement.offsetHeight,
@@ -44,7 +42,6 @@ function startSmoothAutoScroll() {
         const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         const maxScroll = scrollHeight - window.innerHeight;
 
-        // لو وصلنا لنهاية الصفحة أو مش هينفع ينزل تاني بنوقف
         if (currentScroll >= maxScroll - 2) {
             isAutoScrolling = false;
             return;
@@ -62,17 +59,14 @@ function startSmoothAutoScroll() {
         isAutoScrolling = false;
     }, { passive: true });
 });
-
 function openInvitation() {
     const overlay = document.getElementById('envelopeOverlay');
     const video = document.getElementById('envelopeVideo');
     const song = document.getElementById('weddingSong');
     
-    // إخفاء زرار الفتح
     const promptBtn = document.querySelector('.envelope-center-prompt');
     if (promptBtn) promptBtn.style.display = 'none';
     
-    // تشغيل الأغنية والفيديو
     if (song) {
         song.play().catch(error => console.log("Audio play error:", error));
     }
@@ -81,14 +75,15 @@ function openInvitation() {
         video.play().catch(error => console.log("Video play error:", error));
         
         video.onended = function() {
+            window.scrollTo(0, 0); // يضمن إن الدعوة تبدأ من أول سطر فوق
             if (overlay) overlay.classList.add('hide-envelope');
             
-            // يبدأ الأوتو سكرول بعد اختفاء الغلاف بثانية واحدة
             setTimeout(() => {
                 startSmoothAutoScroll();
             }, 1000);
         };
     } else {
+        window.scrollTo(0, 0);
         if (overlay) overlay.classList.add('hide-envelope');
         setTimeout(() => {
             startSmoothAutoScroll();

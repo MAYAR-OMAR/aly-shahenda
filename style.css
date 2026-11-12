@@ -591,7 +591,6 @@ body, html {
 
 
 
-
 /* شاشة الـ Envelope والملء الكامل للشاشة بدون سواد */
 .envelope-overlay {
     position: fixed;
@@ -782,3 +781,14 @@ body, html {
     }
 }
 
+
+
+.envelope-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh; /* بيقفل الشاشة لأخرها على الموبايل وميخليش حاجة تبان من تحت */
+    touch-action: none; /* السر هنا: بيمنع السكرول باللمس طول ما الظرف ظاهر من غير ما يقفل الـ body */
+    overscroll-behavior: none; /* بيمنع سحب الشاشة لفوق وتحت على الآيفون */
+    z-index: 99999;
+}
